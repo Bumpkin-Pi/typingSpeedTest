@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+#all{
+    margin: 5%;
+}
+
+textarea {
+    background-color: black;
+    border: none;
+    outline: none;
+    resize: none;
+    color: white;
+
+    overflow:hidden;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 50%;
+    height: 200px;
+    font-size: 40px;
+
+}
