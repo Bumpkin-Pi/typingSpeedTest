@@ -1,4 +1,7 @@
 
+const timer_max = 10;
+
+
 class Text{
     text = "Hello there i would like to give you a chance to give me an opertunity to give me a fish".toLowerCase();
     text_buffer = this.text;
@@ -11,35 +14,27 @@ class Text{
         let buffer = "";
         user_text.trim();
 
-
         let input_array = user_text.split(" ");
 
         this.current_word = (input_array.length)-1;
         let buffer_array = this.text.split(" ").slice(this.current_word)
         buffer_array[0] = buffer_array[0].replace(input_array[input_array.length-1], "")
 
-
-
         this.text_buffer = ""
-        for (let i in buffer_array){
-            this.text_buffer += buffer_array[i]+" ";
+        for (let i in buffer_array) {
+            this.text_buffer += buffer_array[i] + " ";
         }
 
-
-        let user_words = user_text.split(" ");
-        if (user_words[user_words.length-1] === ""){
-            user_words.pop();
+        if (input_array[input_array.length-1] === ""){
+            input_array.pop();
         }
-        for (let word in user_words){
-            
+        let accurat = 0;
+        for (let word in (input_array)){
+            if (input_array[word] === this.text.split(" ")[word]){
+                accurat++;
+            }
         }
-
-
-
-
-
-
-
+        document.getElementById("accuracy").innerText = "Accuracy: "+(Math.floor(((accurat-1)/(this.current_word-1))*100))+"%"
 
         let correctchar = this.text_buffer[0];
 
@@ -50,10 +45,6 @@ class Text{
         // this.text_buffer = this.text_buffer.replace(this.text_buffer[0], "");
         // this.text_buffer[0] = this.text_buffer[0].replace(" ", "_")
         document.getElementById("text_area").innerText = this.text_buffer//.replace(" ", "_")
-
-
-
-
     }
 
 }
@@ -77,10 +68,10 @@ function onInput(event){
 }
 
 
-let time = 5;
+let time = timer_max;
 let x = setInterval(function() {
     if (playing){
-        time = (Math.floor((countdown - new Date().getTime())/1000)+5)
+        time = (Math.floor((countdown - new Date().getTime())/1000)+timer_max)
         if (time === 0){
             playing = false;
             document.getElementById("input_area").readOnly = true;
@@ -90,7 +81,21 @@ let x = setInterval(function() {
 }, 1000);
 
 
-
+// function set_accuracy(){
+//     let input_array = document.getElementById("input_area").value.split(" ");
+//
+//     document.getElementById("input_area").value;
+//     user_word = current_user_text.split(" ")[current_user_text.split(" ").length - 1]
+//
+//
+//     this.current_word = (input_array.length)-1;
+//     let buffer_array = this.text.split(" ").slice(this.current_word)
+//     buffer_array[0] = buffer_array[0].replace(input_array[input_array.length-1], "")
+//
+//
+//
+//
+// }
 
 
 
