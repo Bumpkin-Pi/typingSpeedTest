@@ -8,19 +8,22 @@ body{
 }
 
 textarea {
-    font-family: C059;
+    font-family: C059, serif;
     background-color: black;
     border: none;
+    text-overflow: fade;
+
     outline: none;
     resize: none;
     color: white;
     text-align: right;
 
     overflow:hidden;
+
     position: absolute;
     top: 45%;
     left: 15%;
-    width: 35%;
+    width: 25%;
     height: 40px;
     font-size: 40px;
 
@@ -28,7 +31,9 @@ textarea {
 
 #text_area{
 
-    font-family: C059;
+    white-space:pre;
+    font-family: C059, serif;
+    text-overflow: fade;
 
     border: none;
     margin: 0;
@@ -41,8 +46,18 @@ textarea {
     overflow: hidden;
     position: absolute;
     top: 45%;
-    left: 50%;
-    width: 35%;
+    left: 40%;
+    width: 45%;
     height: 40px;
     font-size: 40px;
+}
+
+#stats{
+    padding: 10%;
+}
+
+.stat{
+    margin: 30px;
+    float: left;
+    font-size: 30px;
 }

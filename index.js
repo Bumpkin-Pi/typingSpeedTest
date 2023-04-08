@@ -17,7 +17,6 @@ class Text{
         this.current_word = (input_array.length)-1;
         let buffer_array = this.text.split(" ").slice(this.current_word)
         buffer_array[0] = buffer_array[0].replace(input_array[input_array.length-1], "")
-        console.log(input_array[input_array.length-1])
 
 
 
@@ -28,11 +27,11 @@ class Text{
 
 
         let user_words = user_text.split(" ");
-        if (user_words[user_words.length-1] == ""){
+        if (user_words[user_words.length-1] === ""){
             user_words.pop();
         }
         for (let word in user_words){
-
+            
         }
 
 
@@ -41,13 +40,16 @@ class Text{
 
 
 
-        console.log(user_text)
 
         let correctchar = this.text_buffer[0];
 
+        if (this.text_buffer[0] === " "){
+            this.text_buffer.replace(" ", "_")
+        }
+
         // this.text_buffer = this.text_buffer.replace(this.text_buffer[0], "");
         // this.text_buffer[0] = this.text_buffer[0].replace(" ", "_")
-        document.getElementById("text_area").innerText = this.text_buffer.replace(" ", "_")
+        document.getElementById("text_area").innerText = this.text_buffer//.replace(" ", "_")
 
 
 
@@ -63,11 +65,12 @@ document.getElementById("text_area").innerText = text.text_buffer
 function onInput(event){
     let current_user_text = document.getElementById("input_area").value;
     user_word = current_user_text.split(" ")[current_user_text.split(" ").length - 1]
-    console.log(user_word)
     text.take_char(current_user_text)
-
-
 }
+
+
+
+
 
 
 
