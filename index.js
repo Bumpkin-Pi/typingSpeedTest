@@ -9,7 +9,6 @@ class Text{
 
     take_char(user_text){
         let buffer = "";
-        let buffer_array = this.text.split(" ").slice(this.current_word, this.text.split(" ").length-1)
         user_text.trim();
 
 
@@ -17,6 +16,8 @@ class Text{
 
         this.current_word = (input_array.length)-1;
         console.log(this.current_word)
+        let buffer_array = this.text.split(" ").slice(this.current_word, this.text.split(" ").length-1)
+
 
 
         this.text_buffer = ""
