@@ -59,15 +59,35 @@ class Text{
 }
 let text = new Text();
 document.getElementById("text_area").innerText = text.text_buffer
+let countdown = new Date().getTime()+60;
 
-
+let playing = false;
 
 function onInput(event){
-    let current_user_text = document.getElementById("input_area").value;
-    user_word = current_user_text.split(" ")[current_user_text.split(" ").length - 1]
-    text.take_char(current_user_text)
+    if (!playing && time !== 0){
+        countdown = new Date().getTime()+60;
+        playing = true;
+    }
+    if (time !== 0){
+        let current_user_text = document.getElementById("input_area").value;
+        user_word = current_user_text.split(" ")[current_user_text.split(" ").length - 1]
+        text.take_char(current_user_text)
+        document.getElementById("word_count").innerText = "Words: "+text.current_word
+    }
 }
 
+
+let time = 5;
+let x = setInterval(function() {
+    if (playing){
+        time = (Math.floor((countdown - new Date().getTime())/1000)+5)
+        if (time === 0){
+            playing = false;
+            document.getElementById("input_area").readOnly = true;
+        }
+    }
+    document.getElementById("time").innerText = "Time: "+time+"s"
+}, 1000);
 
 
 
