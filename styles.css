@@ -8,18 +8,41 @@ body{
 }
 
 textarea {
+    font-family: C059;
     background-color: black;
     border: none;
     outline: none;
     resize: none;
     color: white;
+    text-align: right;
 
     overflow:hidden;
     position: absolute;
-    top: 50%;
-    left: 25%;
-    width: 50%;
-    height: 200px;
+    top: 45%;
+    left: 15%;
+    width: 35%;
+    height: 40px;
     font-size: 40px;
 
+}
+
+#text_area{
+
+    font-family: C059;
+
+    border: none;
+    margin: 0;
+    outline: none;
+    resize: none;
+    color: #969696;
+    text-align: left;
+
+
+    overflow: hidden;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 35%;
+    height: 40px;
+    font-size: 40px;
 }
