@@ -1,6 +1,6 @@
 
 class Text{
-    text = "Hello there i would like to give you a chance to give me an opertunity to give me a fish";
+    text = "Hello there i would like to give you a chance to give me an opertunity to give me a fish".toLowerCase();
     text_buffer = this.text;
     current_pos = 0;
     current_word = 0;
@@ -15,16 +15,15 @@ class Text{
         let input_array = user_text.split(" ");
 
         this.current_word = (input_array.length)-1;
-        console.log(this.current_word)
-        let buffer_array = this.text.split(" ").slice(this.current_word, this.text.split(" ").length-1)
+        let buffer_array = this.text.split(" ").slice(this.current_word)
+        buffer_array[0] = buffer_array[0].replace(input_array[input_array.length-1], "")
+        console.log(input_array[input_array.length-1])
 
 
 
         this.text_buffer = ""
         for (let i in buffer_array){
             this.text_buffer += buffer_array[i]+" ";
-            console.log(buffer_array[i])
-
         }
 
 
@@ -33,7 +32,6 @@ class Text{
             user_words.pop();
         }
         for (let word in user_words){
-            console.log(user_words[word])
 
         }
 
@@ -49,7 +47,7 @@ class Text{
 
         // this.text_buffer = this.text_buffer.replace(this.text_buffer[0], "");
         // this.text_buffer[0] = this.text_buffer[0].replace(" ", "_")
-        document.getElementById("text_area").innerText = this.text_buffer//.replace(" ", "_")
+        document.getElementById("text_area").innerText = this.text_buffer.replace(" ", "_")
 
 
 
