@@ -73,7 +73,7 @@ function onInput(event){
         document.getElementById("word_count").innerText = "Words: "+text.current_word
     }
     if( document.getElementById("sound_on").checked ){
-        new Audio("/typesound1.wav").play();
+        new Audio("./typesound1.wav").play();
     }
 }
 
